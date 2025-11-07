@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class VendingMachine {
+
     static ArrayList<String> produits = new ArrayList<> (List.of("Eau", "Soda", "Chips","Chocolat"));
     static ArrayList<Double> prix = new ArrayList<>(List.of(5.0, 8.0, 12.0, 15.0)) ;
     static ArrayList<Integer> stock = new ArrayList<>(List.of(10, 5, 7, 3));
@@ -51,6 +52,10 @@ public class VendingMachine {
         }
     }
 
+    public static void updateStock(int numeroProduit) {
+        stock.set((numeroProduit - 1), stock.get(numeroProduit - 1) - 1);System.out.println("Stock restant du produit "+ produits.get(numeroProduit) + ":" + stock.get(numeroProduit) );
+    }
+
 
 
     public static double tottalMoney = 0;
@@ -67,6 +72,7 @@ public class VendingMachine {
             if (amount >= prix.get(proNum - 1)) {
                 tottalMoney += amount - prix.get(proNum - 1 );
                 totalPurchase++; 
+                updateStock(proNum);
                 System.out.println("Vous avez acheté : " + produits.get(proNum - 1));
                 System.out.println("Monnaie rendue : " + (amount - prix.get(proNum - 1)) + " MAD");
             }else{
