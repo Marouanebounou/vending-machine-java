@@ -7,6 +7,9 @@ import java.util.List;
 import java.util.Scanner;
 
 public class VendingMachine {
+    static ArrayList<String> produits = new ArrayList<> (List.of("Eau", "Soda", "Chips","Chocolat"));
+    static ArrayList<Double> prix = new ArrayList<>(List.of(5.0, 8.0, 12.0, 15.0)) ;
+    static ArrayList<Integer> stock = new ArrayList<>(List.of(10, 5, 7, 3));
     public static void mainMenu() {
 
         while (true) {
@@ -42,14 +45,6 @@ public class VendingMachine {
 
     public static void display() {
 
-        ArrayList<String> produits = new ArrayList<>(Arrays.asList("Eau", "Soda", "Chips", "Chocolat"));
-
-        ArrayList<Double> prix = new ArrayList<>(Arrays.asList(5.0, 8.0, 12.0, 15.0));
-
-        ArrayList<Integer> stock = new ArrayList<>(Arrays.asList(10, 5, 7, 3));
-
-        // display
-
         for (int i = 0; i < produits.size(); i++) {
             System.out.println(String.format("%-15s | Prix: %-6s DH | Stock: %d",
                     produits.get(i), prix.get(i), stock.get(i)));
@@ -57,9 +52,7 @@ public class VendingMachine {
     }
 
 
-    static ArrayList<String> produits = new ArrayList<> (List.of("Eau", "Soda", "Chips","Chocolat"));
-    static ArrayList<Double> prix = new ArrayList<>(List.of(5.0, 8.0, 12.0, 15.0)) ;
-    static ArrayList<Integer> stock = new ArrayList<>(List.of(10, 5, 7, 3));
+
     public static double tottalMoney = 0;
     public static int totalPurchase = 0;
     public static void acheterProduit(){
