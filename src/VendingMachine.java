@@ -13,7 +13,7 @@ public class VendingMachine {
         System.out.printf("Entre product number: ");
         int proNum = input.nextInt();
         System.out.printf("Entre the money: ");
-        double amount = input.nextDouble()
+        double amount = input.nextDouble();
         if (stock.get(proNum - 1) == 0) {
             System.out.println("Produit out of stock!");
         }else{
