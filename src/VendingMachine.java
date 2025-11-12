@@ -52,10 +52,11 @@ public class VendingMachine {
         }
     }
 
-    public static void updateStock(int numeroProduit) {
-        stock.set((numeroProduit - 1), stock.get(numeroProduit - 1) - 1);System.out.println("Stock restant du produit "+ produits.get(numeroProduit) + ":" + stock.get(numeroProduit) );
-    }
-
+public static void updateStock(int numeroProduit) {
+    int index = numeroProduit - 1;
+    stock.set(index, stock.get(index) - 1);
+    System.out.println("Stock restant du produit " + produits.get(index) + " : " + stock.get(index));
+}
 
 
     public static double tottalMoney = 0;
